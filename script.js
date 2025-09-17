@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cs=document.getElementById('cutscene'), img=document.getElementById('cutscene-image');
         const canvas=document.getElementById('cutscene-canvas');
         const loading=cs.querySelector('.cutscene-loading'); cs.style.display='flex'; loading.style.display='grid';
-        img.onload=()=>{ 
+        img.onload=async ()=>{ 
             loading.style.display='none'; 
             applyPosterizeToImage(canvas, img, 5.0, 0.12);
             processedSpriteUrl = await preprocessSprite('bird_flap_sprite.png', 4, 32, 32);
